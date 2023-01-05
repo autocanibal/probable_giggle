@@ -24,7 +24,8 @@ fun WelcomeScreen(navController: NavController){
         Button(
             onClick = {
             navController.navigate(Screen.SignInSignUpScreen.route)
-            }) {
+            },
+        ) {
             Text(text = "Continue")
         }
     }
@@ -36,6 +37,6 @@ fun SignInSignUpScreen(name: String?){
         contentAlignment = Alignment.Center,
         modifier = Modifier.fillMaxSize()
     ){
-        Text(text = "Hello This is a test")
+        Text(text = "Hello this is a test")
     }
 }
