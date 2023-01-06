@@ -6,7 +6,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import org.mkhizem.probable_giggle.ui.signinsignup.SignInSignUpScreen
+import org.mkhizem.probable_giggle.ui.signinsignup.SignInScreen
+import org.mkhizem.probable_giggle.ui.signinsignup.SignUpScreen
 import org.mkhizem.probable_giggle.ui.signinsignup.WelcomeScreen
 
 @Composable
@@ -16,16 +17,11 @@ fun Navigation(){
         composable(route = Screen.WelcomeScreen.route){
             WelcomeScreen(navController = navController)
         }
-        composable(
-            route = Screen.SignInSignUpScreen.route + "?name={name}",
-            arguments = listOf(
-                navArgument("name"){
-                    type = NavType.StringType
-                    nullable = true
-                }
-            )
-        ){ entry ->
-            SignInSignUpScreen(name = entry.arguments?.getString("name"))
+        composable(route = Screen.SignInScreen.route) {
+            SignInScreen(navController = navController)
+        }
+        composable(route = Screen.SignUpScreen.route) {
+            SignUpScreen(navController = navController)
         }
     }
 }

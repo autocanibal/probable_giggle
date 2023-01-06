@@ -1,5 +1,7 @@
 package org.mkhizem.probable_giggle.ui.signinsignup
 
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -22,8 +24,10 @@ import androidx.compose.ui.graphics.luminance
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import org.mkhizem.probable_giggle.Screen
 import org.mkhizem.probable_giggle.R
 import org.mkhizem.probable_giggle.ui.theme.stronglyDeemphasizedAlpha
@@ -58,7 +62,7 @@ fun WelcomeScreen(navController: NavController){
                     .animateContentSize()
             )
 
-            Continue(
+            SignInSignUp(
                 navController = navController,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -79,7 +83,7 @@ private fun Branding(modifier: Modifier = Modifier) {
                 .align(Alignment.CenterHorizontally)
                 .padding(horizontal = 76.dp)
         )
-        androidx.compose.material3.Text(
+        Text(
             text = stringResource(id = R.string.app_tagline),
             style = MaterialTheme.typography.titleMedium,
             textAlign = TextAlign.Center,
@@ -108,7 +112,7 @@ private fun Logo(
 }
 
 @Composable
-fun Continue(
+fun SignInSignUp(
     navController: NavController,
     modifier: Modifier = Modifier
 ){
@@ -120,26 +124,39 @@ fun Continue(
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(top = 64.dp, bottom = 12.dp)
         )
-        Button(
-            onClick = { navController.navigate(Screen.SignInSignUpScreen.route) },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 28.dp, bottom = 3.dp)
+        Row(
+            modifier = modifier,
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Text(
-                text = "Continue",
-                style = MaterialTheme.typography.titleSmall
-            )
-        }
+            Button(
+                onClick = { navController.navigate(Screen.SignInScreen.route) },
+                modifier = Modifier
+                    .padding(top = 2.dp, bottom = 3.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.sign_in),
+                    style = MaterialTheme.typography.titleSmall
+                )
+            }
 
+            Button(
+                onClick = { navController.navigate(Screen.SignUpScreen.route) },
+                modifier = Modifier
+                    .padding(top = 2.dp, bottom = 3.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.sign_up),
+                    style = MaterialTheme.typography.titleSmall
+                )
+            }
+
+        }
 }
 }
+@Preview
 @Composable
-fun SignInSignUpScreen(name: String?){
-    Box(
-        contentAlignment = Alignment.Center,
-        modifier = Modifier.fillMaxSize()
-    ){
-        Text(text = "Hello This is a test")
-    }
+fun WelcomeScreenPreview(){
+    val navController = rememberNavController()
+    WelcomeScreen(navController = navController)
 }

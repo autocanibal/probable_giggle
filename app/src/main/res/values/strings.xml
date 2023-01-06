@@ -2,5 +2,10 @@
     <string name="app_name">Probable-Giggle</string>
     <string name="app_tagline">Serving all of Comso Business Park and Beyond</string>
     <string name="welcome">Welcome to Food On Roma\'s app</string>
-    <string name="sign_in_create_account">Sign In or Create an Account</string>
+    <string name="sign_in_sign_up">Sign In or Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+
 </resources>
