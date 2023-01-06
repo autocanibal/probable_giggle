@@ -1,20 +1,23 @@
 package org.mkhizem.probable_giggle.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 
-private val DarkColorPalette = darkColors(
+const val stronglyDeemphasizedAlpha = 0.6f
+const val slightlyDeemphasizedAlpha = 0.87f
+
+private val DarkColorPalette = darkColorScheme(
     primary = Purple200,
-    primaryVariant = Purple700,
+    surfaceVariant = Purple700,
     secondary = Teal200
 )
 
-private val LightColorPalette = lightColors(
+private val LightColorPalette = lightColorScheme(
     primary = Purple500,
-    primaryVariant = Purple700,
+    surfaceVariant = Purple700,
     secondary = Teal200
 
     /* Other default colors to override
@@ -39,7 +42,7 @@ fun ProbableGiggleTheme(
     }
 
     MaterialTheme(
-        colors = colors,
+        colorScheme = colors,
         typography = Typography,
         shapes = Shapes,
         content = content
