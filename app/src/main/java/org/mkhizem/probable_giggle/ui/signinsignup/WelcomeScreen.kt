@@ -114,7 +114,7 @@ fun Continue(
 ){
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
         Text(
-            text = stringResource(id = R.string.sign_in_create_account),
+            text = stringResource(id = R.string.welcome),
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = stronglyDeemphasizedAlpha),
             textAlign = TextAlign.Center,
