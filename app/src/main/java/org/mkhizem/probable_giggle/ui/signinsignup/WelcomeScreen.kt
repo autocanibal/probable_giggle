@@ -65,7 +65,7 @@ fun WelcomeScreen(navController: NavController){
             SignInSignUp(
                 navController = navController,
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
                     .padding(horizontal = 20.dp)
             )
         }
@@ -116,7 +116,7 @@ fun SignInSignUp(
     navController: NavController,
     modifier: Modifier = Modifier
 ){
-    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
         Text(
             text = stringResource(id = R.string.welcome),
             style = MaterialTheme.typography.bodyMedium,
