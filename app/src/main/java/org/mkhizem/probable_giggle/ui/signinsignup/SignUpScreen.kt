@@ -41,7 +41,6 @@ fun SignUpScreen(navController: NavController) {
     val passwordVisibility = remember { mutableStateOf(false) }
     val confirmPasswordVisibility = remember { mutableStateOf(false) }
 
-    val scrollState = rememberScrollState()
     val lightTheme = LocalContentColor.current.luminance() < 0.5f
 
     val background = if(lightTheme){
@@ -53,8 +52,7 @@ fun SignUpScreen(navController: NavController) {
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(0.70f)
+                .fillMaxSize()
                 .clip(Shapes.large)
                 .background(background)
                 .padding(10.dp),
@@ -62,9 +60,7 @@ fun SignUpScreen(navController: NavController) {
             verticalArrangement = Arrangement.Center
         ) {
             Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .verticalScroll(scrollState),
+                modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -153,7 +149,9 @@ fun SignUpScreen(navController: NavController) {
                         else PasswordVisualTransformation()
                     )
                     Spacer(modifier = Modifier.padding(10.dp))
-                    Button(onClick = { }, modifier = Modifier
+                    Button(
+                        onClick = {/*todo*/},
+                        modifier = Modifier
                         .fillMaxWidth(0.8f)
                         .height(50.dp)) {
                         Text(text = "Sign Up", fontSize = 20.sp)

@@ -40,33 +40,21 @@ fun WelcomeScreen(navController: NavController){
     Surface(modifier = Modifier.supportWideScreen()) {
         Column(
             modifier = Modifier
-                .fillMaxWidth()
-                .verticalScroll(rememberScrollState())
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
+            verticalArrangement = Arrangement.SpaceAround
         ) {
-            Spacer(
-                modifier = Modifier
-                    .weight(1f, fill = showBranding)
-                    .animateContentSize()
-            )
-
             AnimatedVisibility(
                 showBranding,
                 Modifier.fillMaxWidth()
             ) {
                 Branding()
             }
-
-            Spacer(
-                modifier = Modifier
-                    .weight(1f, fill = showBranding)
-                    .animateContentSize()
-            )
-
             SignInSignUp(
                 navController = navController,
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 20.dp)
+                    .padding(horizontal = 20.dp),
             )
         }
     }
@@ -116,7 +104,11 @@ fun SignInSignUp(
     navController: NavController,
     modifier: Modifier = Modifier
 ){
-    Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
         Text(
             text = stringResource(id = R.string.welcome),
             style = MaterialTheme.typography.bodyMedium,

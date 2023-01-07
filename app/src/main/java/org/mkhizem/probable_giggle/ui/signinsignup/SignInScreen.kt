@@ -36,7 +36,6 @@ fun SignInScreen(navController: NavController){
     val passwordValue = remember { mutableStateOf("")}
     val passwordVisibility = remember{ mutableStateOf(false)}
     val focusRequester = remember{FocusRequester()}
-    val scrollState = rememberScrollState()
     val lightTheme = LocalContentColor.current.luminance() < 0.5f
 
     val background = if(lightTheme){
@@ -50,14 +49,12 @@ fun SignInScreen(navController: NavController){
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxSize()
                 .background(background)
-                .fillMaxHeight(0.6f)
                 .clip(Shapes.large)
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.verticalScroll(scrollState)
             ){
                 Text(
                     text = "Sign In",
@@ -108,7 +105,7 @@ fun SignInScreen(navController: NavController){
 
                     Spacer(modifier = Modifier.padding(10.dp))
                     Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { /*Todo*/ },
                         modifier = Modifier
                             .fillMaxWidth(0.8f)
                             .height(50.dp)

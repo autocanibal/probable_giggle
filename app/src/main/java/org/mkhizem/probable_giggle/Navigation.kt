@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import org.mkhizem.probable_giggle.ui.signinsignup.SignInScreen
 import org.mkhizem.probable_giggle.ui.signinsignup.SignUpScreen
 import org.mkhizem.probable_giggle.ui.signinsignup.WelcomeScreen
+import org.mkhizem.probable_giggle.ui.storefront.StoreScreen
 
 @Composable
 fun Navigation(){
@@ -22,6 +23,9 @@ fun Navigation(){
         }
         composable(route = Screen.SignUpScreen.route) {
             SignUpScreen(navController = navController)
+        }
+        composable(route = Screen.StoreScreen.route) {
+            StoreScreen(navController = navController)
         }
     }
 }
