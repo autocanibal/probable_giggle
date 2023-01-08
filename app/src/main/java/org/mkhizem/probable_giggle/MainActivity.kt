@@ -20,3 +20,4 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+//todo backend before continuing to rest of frontend
