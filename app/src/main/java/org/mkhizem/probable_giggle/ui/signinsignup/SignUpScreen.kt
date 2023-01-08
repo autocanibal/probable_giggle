@@ -11,8 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.luminance
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -25,6 +24,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import org.mkhizem.probable_giggle.R
 import org.mkhizem.probable_giggle.Screen
+import org.mkhizem.probable_giggle.backend.UserInfo
 import org.mkhizem.probable_giggle.ui.theme.Shapes
 import org.mkhizem.probable_giggle.ui.theme.md_theme_dark_background
 import org.mkhizem.probable_giggle.ui.theme.md_theme_light_background
@@ -119,8 +119,8 @@ fun SignUpScreen(navController: NavController) {
                                 passwordVisibility.value = !passwordVisibility.value
                             }) {
                                 Icon(
-                                    imageVector = ImageVector.vectorResource(id= assetId),
-                                    contentDescription = "visibility eye"
+                                    painter = painterResource(id = assetId),
+                                    contentDescription = null
                                 )
                             }
                         },
@@ -140,8 +140,8 @@ fun SignUpScreen(navController: NavController) {
                                 confirmPasswordVisibility.value = !confirmPasswordVisibility.value
                             }) {
                                 Icon(
-                                    imageVector = ImageVector.vectorResource(id= assetId),
-                                    contentDescription = "visibility eye"
+                                    painter = painterResource(id = assetId),
+                                    contentDescription = null
                                 )
                             }
                         },
